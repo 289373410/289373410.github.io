@@ -1,3 +1,4 @@
+http://www.aquestian.cn/blogs/Java-FTP-NAS%20copy/
 http://www.aquestian.cn/blogs/SQL-De-Duplicate/
 http://www.aquestian.cn/code/Code-Wms/
 http://www.aquestian.cn/blogs/Kettle-Data-Transmission/
@@ -47,4 +48,3 @@ http://www.aquestian.cn/code/Code-Student/
 http://www.aquestian.cn/blogs/Docker-FastDFS/
 http://www.aquestian.cn/blogs/SpringBoot-FastDFS/
 http://www.aquestian.cn/blogs/Docker-Insatll-jar/
-http://www.aquestian.cn/blogs/Redis-Types/
