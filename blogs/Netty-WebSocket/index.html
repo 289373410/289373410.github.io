@@ -2454,7 +2454,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: false,
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1696838591259),
+    lastupdate: new Date(1700560701674),
     cdn: {
       izitoast_css: 'https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2836,6 +2836,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <p><img src="https://img-blog.csdnimg.cn/img_convert/19ad09da62b9a1dfc97d19d8358cd5bc.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/img_convert/19ad09da62b9a1dfc97d19d8358cd5bc.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>成功生成证书<br><img src="https://img-blog.csdnimg.cn/img_convert/38ccafef3cea235d1131cd86bb229d4a.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/img_convert/38ccafef3cea235d1131cd86bb229d4a.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>迁移到行业标志</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">keytool -importkeystore -srckeystore D:\code\my_code\netty-demo-m\src\main\resources\mystore.jks -destkeystore D:\code\my_code\netty-demo-m\src\main\resources\mystore.jks -deststoretype pkcs12</span><br></pre></td></tr></table></figure>
+
 </div><div class="story post-story"><h2 id="项目运行"><a href="#项目运行" class="headerlink" title="项目运行"></a>项目运行</h2><p>将jks文件考入项目resources下<br><img src="https://img-blog.csdnimg.cn/img_convert/7f69a93212c77b058a766ae9dae906dd.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/img_convert/7f69a93212c77b058a766ae9dae906dd.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <h3 id="yaml配置："><a href="#yaml配置：" class="headerlink" title="yaml配置："></a>yaml配置：</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: <span class="number">8080</span></span><br><span class="line">  ssl:</span><br><span class="line">    key-store: classpath:mystore.jks</span><br><span class="line">    key-store-password: <span class="number">1234567</span></span><br><span class="line">    key-store-type: JKS</span><br><span class="line">#    key-alias: server</span><br><span class="line">    enabled: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <h3 id="netty证书加载"><a href="#netty证书加载" class="headerlink" title="netty证书加载"></a>netty证书加载</h3><p>这里我就只上关键代码了</p>
@@ -2847,7 +2850,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>点击安装证书 - 选择本地计算机 - 将所有的证书都放入下列存储 - 受信任的根证书颁发机构<br><img src="https://img-blog.csdnimg.cn/img_convert/ce27cec8054ff074541b167f6017bba8.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/img_convert/ce27cec8054ff074541b167f6017bba8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>添加完成后就不会有不信任了。<br><img src="https://img-blog.csdnimg.cn/img_convert/4fec8e96a34ff81c1a58d437d4559cd7.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/img_convert/4fec8e96a34ff81c1a58d437d4559cd7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>导入证书到信任库中</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">keytool -import -alias server -keystore mycacert -file D:\code\my_code\netty-demo-m\src\main\resources\mystore.cer -storepass changeit</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">keytool -import -alias server -keystore mycacert -file D:\code\my_code\netty-demo-m\src\main\resources\mystore.cer -storepass 1234567</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/img_convert/b3f54fad1a0f05aef80fe49ed1f0a558.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/img_convert/b3f54fad1a0f05aef80fe49ed1f0a558.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br>在java bin 目录下会出现<br><img src="https://img-blog.csdnimg.cn/img_convert/4bc000af58b31f234bcad9d7472833dd.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/img_convert/4bc000af58b31f234bcad9d7472833dd.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>再次运行<br><img src="https://img-blog.csdnimg.cn/img_convert/0900967055648e0655031e6f4d331412.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/img_convert/0900967055648e0655031e6f4d331412.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 </div><div class="story post-story"><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>值得一提的是，自签的证书有且之能在本机使用，如将A机生成的证书拷贝B机使用也会出现同样的错误。</p>
